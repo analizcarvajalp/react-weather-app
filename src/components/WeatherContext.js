@@ -17,8 +17,6 @@ function Weather(props) {
 
       let uri = encodeURIComponent(city);
 
-      let apiKey = "f7dd7ed3b3a6300484155d305528df93";
-
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${uri}&units=metric&appid=${process.env.REACT_APP_WEATHERAPP_API_KEY}`
       )
