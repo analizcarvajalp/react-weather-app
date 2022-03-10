@@ -3,11 +3,11 @@ import React from "react";
 const Search = (props) => {
   return (
     <>
-      <div class="search">
+      <div className="search">
         <form onSubmit={props.getWeather}>
           <input
             type="text"
-            class="search-bar"
+            className="search-bar"
             value={props.city}
             onChange={(e) => {
               props.setCity(e.target.value);
@@ -17,7 +17,7 @@ const Search = (props) => {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 1024 1024"
               height="1.5em"
               width="1.5em"

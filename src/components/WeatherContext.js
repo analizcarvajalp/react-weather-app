@@ -7,6 +7,7 @@ function Weather(props) {
   const [loading, setLoading] = useState(true);
   const [responseData, setResponseData] = useState("");
   function getWeather(e) {
+    console.log(process.env.REACT_APP_WEATHERAPP_API_KEY);
     e.preventDefault();
     if (city.length === 0) {
       alert("insert city");
@@ -19,7 +20,7 @@ function Weather(props) {
       let apiKey = "f7dd7ed3b3a6300484155d305528df93";
 
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${uri}&units=metric&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${uri}&units=metric&appid=${process.env.REACT_APP_WEATHERAPP_API_KEY}`
       )
         .then((res) => {
           if (res.ok) {
@@ -27,7 +28,7 @@ function Weather(props) {
             return res.json();
           } else {
             if (res.status === 404) {
-              alert("insert a real city, asshole");
+              alert("insert a real city");
               setLoading(true);
             }
           }
